@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Management System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+    }
+
+    header {
+      background: linear-gradient(to right, #0077b6, #00b4d8);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #023e8a;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .header-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background-color: white;
+      color: #0077b6;
+    }
+
+    .register-btn {
+      background-color: #03045e;
+      color: white;
+    }
+
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      background-color: white;
+      color: #0077b6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #03045e;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      flex: 1;
+    }
+
+    nav ul li a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #0077b6;
+    }
+
+    .main-content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      color: #023e8a;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      font-size: 16px;
+      color: #333;
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">Online Product & Hospital Recommendation</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search by disease..." />
+      <button>🔍</button>
+    </div>
+    <div class="header-buttons">
+      <button class="login-btn" onclick="location.href='login.html'">Log in</button>
+      <button class="register-btn" onclick="location.href='register.html'">Register</button>
+      <div class="profile-icon">AD</div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Hospital</a></li>
+      <li><a href="#">Food</a></li>
+      <li><a href="#">Madicine</a></li>
+      <li><a href="#">Add to Cart</a></li>
+      <li><a href="#">About us</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <h1>Online Product & Hospital Recommendation</h1>
+    
+  </div>
+</body>
+</html>

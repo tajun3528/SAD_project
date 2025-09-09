@@ -1,0 +1,41 @@
+<?php
+include 'db.php';
+session_start();
+if (!isset($_SESSION['admin_name'])) {
+  header("Location: admin_login.html");
+  exit();
+}
+
+$id = $_GET['id'];
+$stmt = $conn->prepare("SELECT * FROM hospitals WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$hospital = $result->fetch_assoc();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital Details</title>
+  <style>
+    body { font-family: 'Segoe UI'; background-color: #f1f5f9; padding: 40px; }
+    .details-box { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .details-box img { width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 20px; }
+    .details-box h2 { color: #2563eb; margin-bottom: 20px; }
+    .details-box p { margin: 10px 0; color: #334155; }
+    .back-link { display: inline-block; margin-top: 20px; padding: 8px 16px; background-color: #0ea5e9; color: white; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="details-box">
+    <img src="<?php echo $hospital['image_path']; ?>" alt="Hospital Image">
+    <h2><?php echo htmlspecialchars($hospital['name']); ?></h2>
+    <p><strong>Location:</strong> <?php echo htmlspecialchars($hospital['location']); ?></p>
+    <p><strong>Recommendation:</strong> <?php echo htmlspecialchars($hospital['recommendation']); ?></p>
+    <p><strong>Details:</strong> <?php echo nl2br(htmlspecialchars($hospital['details'])); ?></p>
+    <p><em>Added on: <?php echo date("d M Y", strtotime($hospital['created_at'])); ?></em></p>
+    <a href="manage_hospitals.php" class="back-link">🔙 Back to list</a>
+  </div>
+</body>
+</html>

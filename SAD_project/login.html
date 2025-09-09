@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('concert-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(2, 62, 138, 0.85);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 30px;
+      z-index: 1000;
+    }
+
+    .nav-bar a {
+      color: #90e0ef;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-bar a:hover {
+      color: #0077b6;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(2,62,138,0.15);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #023e8a;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #90e0ef;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #e3f2fd;
+      color: #023e8a;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #023e8a;
+    }
+
+    .register-btn {
+      background-color: #90e0ef;
+      color: #023e8a;
+      margin-top: 10px;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .register-btn:hover {
+      background-color: #0077b6;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="register.html">SIGN UP</a>
+      <a href="#">OUR STORY</a>
+      <a href="#">CONTACT</a>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <a href="admin_login.html" style="margin-left: 0; margin-right: 0; background-color: #0077b6; color: #fff; padding: 6px 16px; border-radius: 6px; font-weight: bold; font-size: 14px; text-decoration: none;">Admin Login</a>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <label>Email Address</label>
+      <input type="email" name="email" required />
+      <label>Password</label>
+      <input type="password" name="password" required />
+      <button type="submit">Log In</button>
+    </form>
+    <button type="button" class="register-btn" onclick="window.location.href='register.html'">
+      Register
+    </button>
+  </div>
+</body>
+</html>
